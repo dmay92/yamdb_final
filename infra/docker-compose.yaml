@@ -9,11 +9,11 @@ services:
       - ./.env
 
   web:
-    build: ../api_yamdb/
+    image: diablik666/yamdb
     restart: always
     volumes:
-      - infra_sp2_static_value:/app/static/
-      - infra_sp2_media_value:/app/media/
+      - yamdb_final_static_value:/app/static/
+      - yamdb_final_media_value:/app/media/
     depends_on:
       - db
     env_file:
@@ -25,11 +25,13 @@ services:
       - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - infra_sp2_static_value:/var/html/static/
-      - infra_sp2_media_value:/var/html/media/
+
+      - yamdb_final_static_value:/var/html/static/
+      - yamdb_final_media_value:/var/html/media/
+
     depends_on:
       - web
 
 volumes:
-  infra_sp2_static_value:
-  infra_sp2_media_value:
+  yamdb_final_static_value:
+  yamdb_final_media_value:

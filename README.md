@@ -1,3 +1,5 @@
+![YaMDb deploy](https://github.com/dmay92/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 # API_YAMDB
 REST API проект для сервиса YaMDb — сбор отзывов о фильмах, книгах или музыке.
 
