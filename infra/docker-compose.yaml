@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: diablik666/yamdb
+    image: dmay92/yamdb_final
     restart: always
     volumes:
       - yamdb_final_static_value:/app/static/
