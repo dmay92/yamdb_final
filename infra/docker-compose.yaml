@@ -35,3 +35,4 @@ services:
 volumes:
   yamdb_final_static_value:
   yamdb_final_media_value:
+  
