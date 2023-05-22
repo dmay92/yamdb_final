@@ -7,15 +7,19 @@ from django.db import models
 class User(AbstractUser):
     """Модель пользователя."""
 
-    class UserRole(models.TextChoices):
-        USER = "user"
-        MODERATOR = "moderator"
-        ADMIN = "admin"
+    ROLES = [
+        ('user', 'user'),
+        ('moderator', 'moderator'),
+        ('admin', 'admin')
+    ]
+    USER = 'user'
+    MODERATOR = 'moderator'
+    ADMIN = 'admin'
 
     role = models.CharField(
         max_length=255,
-        choices=UserRole.choices,
-        default=UserRole.USER,
+        choices=ROLES,
+        default=USER,
         verbose_name="Роль"
     )
     username = models.CharField(
